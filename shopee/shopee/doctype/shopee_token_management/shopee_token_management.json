@@ -1,0 +1,53 @@
+{
+    "doctype": "DocType",
+    "name": "Shopee Token Management",
+    "module": "Shopee",
+    "custom": 0,
+    "is_submittable": 0,
+    "fields": [
+        {
+            "label": "Merchant ID",
+            "fieldname": "merchant_id",
+            "fieldtype": "Data"
+        },
+        {
+            "label": "Shop ID",
+            "fieldname": "shop_id",
+            "fieldtype": "Data"
+        },
+        {
+            "label": "Access Token",
+            "fieldname": "access_token",
+            "fieldtype": "Password"
+        },
+        {
+            "label": "Refresh Token",
+            "fieldname": "refresh_token",
+            "fieldtype": "Password"
+        },
+        {
+            "label": "Token Expiry",
+            "fieldname": "token_expiry",
+            "fieldtype": "Int"
+        },
+        {
+            "label": "Last Refreshed",
+            "fieldname": "last_refreshed",
+            "fieldtype": "Datetime"
+        },
+        {
+            "label": "Active",
+            "fieldname": "active",
+            "fieldtype": "Check"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        }
+    ]
+}

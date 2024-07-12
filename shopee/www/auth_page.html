@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopee Integration</title>
+    <link rel="stylesheet" type="text/css" href="/assets/your_app/css/style.css">
+    <script src="/assets/shopee/js/custom_script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="auth-list">
+            <!-- 由 JavaScript 动态填充 -->
+        </div>
+        <button id="authorize-btn">新增授权</button>
+    </div>
+
+    <script>
+        document.getElementById('authorize-btn').addEventListener('click', function() {
+            window.location.href = '/api/method/shopee.controllers.authorization.generate_auth_link';
+        });
+
+        // 假设 fetchAuthorizedList 是一个在 custom_script.js 中定义的函数
+        fetchAuthorizedList();  
+    </script>
+</body>
+</html>

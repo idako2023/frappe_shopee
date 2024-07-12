@@ -8,7 +8,18 @@ app_license = "mit"
 
 # Includes in <head>
 # ------------------
+rest_api = {
+    "/api/auth/callback": "shopee.api.auth.handle_auth_callback",
+}
 
+doc_events = {
+    "*": {
+        "get_auth_link": "shopee.api.get_auth_link",
+    },
+    "Company": {
+        "after_insert": "shopee.controllers.shopee_integration.sync_shopee_merchant_info"
+    }
+}
 # include js, css files in header of desk.html
 # app_include_css = "/assets/shopee/css/shopee.css"
 # app_include_js = "/assets/shopee/js/shopee.js"
@@ -132,6 +143,11 @@ app_license = "mit"
 
 # Scheduled Tasks
 # ---------------
+scheduler_events = {
+    "weekly": [
+        "shopee.shopee.tasks.refresh_all_tokens"
+    ]
+}
 
 # scheduler_events = {
 # 	"all": [
